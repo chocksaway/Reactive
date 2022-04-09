@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class TestFibonacciFluxSink {
     @Test
     public void testFibonacciFluxSink() {
@@ -32,5 +34,7 @@ public class TestFibonacciFluxSink {
             fibonacciSeries.add(t);
         });
         System.out.println(fibonacciSeries);
+
+        assertEquals("[1, 1, 2, 3, 5]", fibonacciSeries.toString());
     }
 }
