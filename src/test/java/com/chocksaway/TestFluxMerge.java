@@ -10,7 +10,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
+/**
+ * https://www.baeldung.com/java-reactor-map-flatmap
+ */
 public class TestFluxMerge {
     @Test
     public void testFluxMergeSubscribe() {
