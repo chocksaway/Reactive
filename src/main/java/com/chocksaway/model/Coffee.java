@@ -1,14 +1,22 @@
 package com.chocksaway.model;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+/**
+ * Author milesd on 09/04/2022.
+ */
 public class Coffee {
-    private String id;
     private String name;
+    private int price;
+
+    public Coffee(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return this.price;
+    }
+
+    public String getName() {
+        return this.name;
+    }
 }
