@@ -13,13 +13,16 @@ public class TestHotFlux {
     @Test
     public void testHotFlux() {
         ConnectableFlux<Object> hotFlux = Flux.create(fluxSink -> {
-                    while(true) {
+                    int counter = 0;
+
+                    while(counter <= 50) {
                         fluxSink.next(System.currentTimeMillis());
+                        counter++;
                     }
                 })
                 .publish();
 
-        hotFlux.subscribe(System.out::println);
+        hotFlux.take(5).subscribe(System.out::println);
 
         hotFlux.connect();
 
